@@ -773,6 +773,10 @@ p {
   background: var(--paper);
 }
 
+.updates-grid article:nth-child(even) {
+  grid-template-rows: 1fr 138px;
+}
+
 .updates-grid article:nth-child(even) img {
   order: 2;
 }
@@ -790,7 +794,10 @@ p {
 }
 
 .updates-grid article div {
+  display: flex;
+  flex-direction: column;
   padding: 22px 20px 20px;
+  min-height: 0;
 }
 
 .updates-grid .update-meta {
@@ -839,9 +846,16 @@ p {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  margin-top: 16px;
+  width: max-content;
+  max-width: 100%;
+  margin-top: auto;
   color: var(--navy);
   white-space: nowrap;
+}
+
+.updates-grid article a span {
+  display: inline;
+  flex: 0 0 auto;
 }
 
 @keyframes updateRollUp {
