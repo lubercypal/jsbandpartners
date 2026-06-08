@@ -1448,6 +1448,10 @@ p {
     transform: translateY(-6px);
   }
 
+  .subitem:not(.is-open) > .submenu.level-two {
+    margin-top: 0;
+  }
+
   .submenu > a,
   .submenu > .subitem > a,
   .practice-menu > a,
