@@ -1293,10 +1293,12 @@ p {
     height: 72px;
     transform: translateX(-50%);
     overflow: hidden;
-    border: 8px solid rgba(244, 239, 230, .96);
-    border-bottom: 0;
-    border-radius: 28px 28px 0 0;
-    background: linear-gradient(90deg, var(--paper) 0%, #d7cdbd 32%, var(--navy) 100%);
+    border: 0 solid rgba(244, 239, 230, .96);
+    border-right-width: 8px;
+    border-bottom-width: 8px;
+    border-left-width: 8px;
+    border-radius: 0 0 28px 28px;
+    background: linear-gradient(90deg, var(--navy) 0%, var(--navy-2) 100%);
     box-shadow: 0 22px 42px rgba(7, 31, 58, .22);
   }
 
@@ -1311,7 +1313,7 @@ p {
     width: 100%;
     height: 100%;
     border: 0;
-    color: #fff;
+    color: var(--gold);
     background: transparent;
     cursor: pointer;
   }
@@ -1329,18 +1331,18 @@ p {
     letter-spacing: -.08em;
   }
 
-  .mobile-dock a:nth-child(-n+3) {
-    color: var(--navy);
+  .mobile-dock .dock-whatsapp {
+    color: #25d366;
   }
 
   .menu-toggle {
-    gap: 5px;
+    gap: 7px;
   }
 
   .menu-toggle span {
     display: block;
-    width: 30px;
-    height: 3px;
+    width: 38px;
+    height: 4px;
     border-radius: 999px;
     background: currentColor;
   }
@@ -1418,9 +1420,10 @@ p {
     bottom: 0;
     width: min(520px, 100%);
     height: 68px;
-    border-width: 7px;
-    border-bottom: 0;
-    border-radius: 24px 24px 0 0;
+    border-right-width: 7px;
+    border-bottom-width: 7px;
+    border-left-width: 7px;
+    border-radius: 0 0 24px 24px;
   }
 
   .mobile-dock svg {
@@ -1433,8 +1436,8 @@ p {
   }
 
   .menu-toggle span {
-    width: 28px;
-    height: 3px;
+    width: 34px;
+    height: 4px;
   }
 
   .hero {
