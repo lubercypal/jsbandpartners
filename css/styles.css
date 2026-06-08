@@ -728,12 +728,21 @@ p {
 .updates-band {
   padding-top: 56px;
   padding-bottom: 62px;
-  background: var(--paper);
-  border-bottom: 1px solid var(--line);
+  background: var(--navy);
+  border-bottom: 1px solid rgba(244, 239, 230, .14);
 }
 
 .updates-title {
   margin-bottom: 34px;
+}
+
+.updates-title h2,
+.updates-title a {
+  color: var(--paper);
+}
+
+.updates-title i {
+  background: var(--gold);
 }
 
 .updates-grid {
@@ -741,8 +750,8 @@ p {
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 1px;
   overflow: hidden;
-  background: var(--line);
-  border: 1px solid var(--line);
+  background: rgba(244, 239, 230, .16);
+  border: 1px solid rgba(244, 239, 230, .16);
 }
 
 .update-column {
