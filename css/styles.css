@@ -1409,13 +1409,13 @@ p {
     min-width: 0;
     max-width: 420px;
     margin-left: 18px;
-    padding: 18px 20px 20px;
+    padding: 8px 0 14px;
     opacity: 1;
     visibility: visible;
     transform: none;
-    background: rgba(7, 31, 58, .98);
-    border: 1px solid rgba(184, 134, 72, .28);
-    box-shadow: 0 18px 38px rgba(7, 31, 58, .16);
+    background: transparent;
+    border: 0;
+    box-shadow: none;
     box-sizing: border-box;
   }
 
@@ -1433,10 +1433,10 @@ p {
     width: auto;
     padding: 0;
     border: 0;
-    color: rgba(247, 244, 239, .88);
+    color: var(--navy);
     text-transform: none;
     letter-spacing: 0;
-    font-size: 12px;
+    font-size: 13px;
     line-height: 1.45;
     font-weight: 500;
     white-space: nowrap;
@@ -1455,14 +1455,15 @@ p {
     margin-top: 8px;
     margin-left: 14px;
     width: calc(100% - 14px);
-    padding: 10px 12px;
-    background: var(--paper);
-    border: 1px solid rgba(7, 31, 58, .12);
+    padding: 4px 0 2px;
+    background: transparent;
+    border: 0;
     box-shadow: none;
   }
 
   .submenu.level-two a {
     color: var(--navy);
+    opacity: .72;
   }
 
   .header-actions {
@@ -1547,6 +1548,16 @@ p {
   .matters-band,
   .updates-grid {
     grid-template-columns: 1fr;
+  }
+
+  .updates-grid article,
+  .updates-grid article:nth-child(even) {
+    grid-template-rows: 188px 1fr;
+  }
+
+  .updates-grid article:nth-child(even) img,
+  .updates-grid article:nth-child(even) div {
+    order: initial;
   }
 
   .footer-stay,
