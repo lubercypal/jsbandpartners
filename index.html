@@ -7,18 +7,45 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&amp;family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
   <header class="top-header">
     <a class="brand" href="#home" aria-label="JSB and Partners home">
       <span class="brand-mark"><i>J</i><i>S</i><i>B</i></span>
-      <span><strong>JSB &amp; Partners</strong><small>Advocates &amp; Legal Consultants</small></span>
+      <span class="brand-divider"></span>
+      <span class="brand-copy"><strong>JSB &amp; Partners</strong><small>Advocates &amp; Legal Consultants</small><em>Advisory &bull; Strategy &bull; Growth</em></span>
     </a>
     <nav class="top-nav" aria-label="Primary navigation">
-      <a href="#practice">Practice Areas</a>
-      <a href="#attorneys">Attorneys</a>
-      <a href="#matters">Matters</a>
+      <div class="nav-item has-menu">
+        <a href="#practice">Practice Areas</a>
+        <div class="submenu">
+          <a href="#practice">Corporate Law</a>
+          <a href="#practice">Litigation</a>
+          <div class="subitem">
+            <a href="#practice">Advisory</a>
+            <div class="submenu level-two">
+              <a href="#practice">Tax Advisory</a>
+              <a href="#practice">Regulatory</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item has-menu">
+        <a href="#attorneys">Attorneys</a>
+        <div class="submenu">
+          <a href="#attorneys">Partners</a>
+          <a href="#attorneys">Senior Counsel</a>
+          <a href="attorneys.html">Dedicated Teams</a>
+        </div>
+      </div>
+      <div class="nav-item has-menu">
+        <a href="#matters">Matters</a>
+        <div class="submenu">
+          <a href="#matters">Recent Matters</a>
+          <a href="blog.html">Insights</a>
+        </div>
+      </div>
       <a href="#insights">Insights</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -27,7 +54,7 @@
 
   <main>
     <section id="home" class="hero">
-      <div class="hero-slide is-active" style="--hero-image: url('assets/hero-stairs-carousel.png')">
+      <div class="hero-slide is-active" style="--hero-image: url('assets/images/banner/hero-stairs-carousel.png')">
         <div class="hero-copy">
           <p class="eyebrow">Legal insight. Strategic solutions.</p>
           <h1><span>Progress Through</span><em>Experience.</em></h1>
@@ -36,7 +63,7 @@
           <a class="dark-btn" href="#contact">Schedule a Consultation <span>&rarr;</span></a>
         </div>
       </div>
-      <div class="hero-slide" style="--hero-image: url('assets/hero-boardroom-carousel.png')">
+      <div class="hero-slide" style="--hero-image: url('assets/images/banner/hero-boardroom-carousel.png')">
         <div class="hero-copy">
           <p class="eyebrow">Commercial clarity. Practical execution.</p>
           <h1><span>Decisions Built On</span><em>Judgement.</em></h1>
@@ -45,7 +72,7 @@
           <a class="dark-btn" href="#contact">Discuss a Matter <span>&rarr;</span></a>
         </div>
       </div>
-      <div class="hero-slide" style="--hero-image: url('assets/hero-court-warm.png')">
+      <div class="hero-slide" style="--hero-image: url('assets/images/banner/hero-court-warm.png')">
         <div class="hero-copy">
           <p class="eyebrow">Court discipline. Calm advice.</p>
           <h1><span>Trusted Counsel For</span><em>Complexity.</em></h1>
@@ -102,7 +129,7 @@
         <p>Since 1998, JSB &amp; Partners has been providing sound legal advice and practical solutions. We help our clients grow, protect and achieve their goals.</p>
         <a class="text-link" href="about.html">Learn More About Us <span>&rarr;</span></a>
       </article>
-      <img src="assets/firm-boardroom.png" alt="Modern law firm boardroom">
+      <img src="assets/images/firm/firm-boardroom.png" alt="Modern law firm boardroom">
       <article class="firm-quote">
         <div>&ldquo;</div>
         <blockquote>Our approach is simple &mdash; understand deeply, advise clearly, and deliver effectively.</blockquote>
@@ -112,23 +139,34 @@
       </article>
     </section>
 
-    <section id="matters" class="band band-light matters-band">
+    <section id="matters" class="band matters-band">
       <div class="band-head matter-title"><h2>Recent Matters</h2><i></i><a href="blog.html">View All Matters <span>&rarr;</span></a></div>
-      <article><h3>2026</h3><p>Advised a leading manufacturing group on cross-border acquisition of a European company.</p><a href="#">Corporate Law <span>&rarr;</span></a></article>
-      <article><h3>2026</h3><p>Successfully represented client in high-value commercial dispute before Delhi High Court.</p><a href="#">Litigation <span>&rarr;</span></a></article>
-      <article><h3>2025</h3><p>Advised fintech startup on regulatory framework, licensing and fundraise.</p><a href="#">Corporate Advisory <span>&rarr;</span></a></article>
+      <div class="matters-marquee marquee-shell">
+        <div class="matter-track marquee-track">
+          <article><h3>2026</h3><p>Advised a leading manufacturing group on cross-border acquisition of a European company.</p><a href="#">Corporate Law <span>&rarr;</span></a></article>
+          <article><h3>2026</h3><p>Successfully represented client in high-value commercial dispute before Delhi High Court.</p><a href="#">Litigation <span>&rarr;</span></a></article>
+          <article><h3>2025</h3><p>Advised fintech startup on regulatory framework, licensing and fundraise.</p><a href="#">Corporate Advisory <span>&rarr;</span></a></article>
+          <article><h3>2025</h3><p>Structured a private family settlement involving business succession and asset protection.</p><a href="#">Private Client <span>&rarr;</span></a></article>
+          <article><h3>2024</h3><p>Guided an enterprise technology company through licensing and commercial contract review.</p><a href="#">Regulatory <span>&rarr;</span></a></article>
+          <article><h3>2026</h3><p>Advised a leading manufacturing group on cross-border acquisition of a European company.</p><a href="#">Corporate Law <span>&rarr;</span></a></article>
+          <article><h3>2026</h3><p>Successfully represented client in high-value commercial dispute before Delhi High Court.</p><a href="#">Litigation <span>&rarr;</span></a></article>
+          <article><h3>2025</h3><p>Advised fintech startup on regulatory framework, licensing and fundraise.</p><a href="#">Corporate Advisory <span>&rarr;</span></a></article>
+          <article><h3>2025</h3><p>Structured a private family settlement involving business succession and asset protection.</p><a href="#">Private Client <span>&rarr;</span></a></article>
+          <article><h3>2024</h3><p>Guided an enterprise technology company through licensing and commercial contract review.</p><a href="#">Regulatory <span>&rarr;</span></a></article>
+        </div>
+      </div>
     </section>
 
     <section id="attorneys" class="band band-warm attorney-band">
       <div class="band-head attorney-title"><h2>Our Attorneys</h2><i></i><a href="attorneys.html">View All Attorneys <span>&rarr;</span></a></div>
       <div class="marquee-shell">
         <div class="attorney-track marquee-track reverse">
-          <article class="attorney-card"><img src="assets/attorney-rajesh.png" alt="Rajesh Sharma"><div><span>Partner</span><h3>Rajesh Sharma</h3><p>Corporate &amp; Commercial Law expert with 30+ years of experience.</p><a href="attorneys.html">View Profile <span>&rarr;</span></a></div></article>
-          <article class="attorney-card"><img src="assets/attorney-meera.png" alt="Meera Gupta"><div><span>Senior Partner</span><h3>Meera Gupta</h3><p>Specializes in complex litigation and arbitration matters.</p><a href="attorneys.html">View Profile <span>&rarr;</span></a></div></article>
-          <article class="attorney-card"><img src="assets/attorney-amit.png" alt="Amit Bansal"><div><span>Partner</span><h3>Amit Bansal</h3><p>Advises on tax planning, regulatory compliance and structuring.</p><a href="attorneys.html">View Profile <span>&rarr;</span></a></div></article>
-          <article class="attorney-card"><img src="assets/attorney-rajesh.png" alt="Rajesh Sharma"><div><span>Partner</span><h3>Rajesh Sharma</h3><p>Corporate &amp; Commercial Law expert with 30+ years of experience.</p><a href="attorneys.html">View Profile <span>&rarr;</span></a></div></article>
-          <article class="attorney-card"><img src="assets/attorney-meera.png" alt="Meera Gupta"><div><span>Senior Partner</span><h3>Meera Gupta</h3><p>Specializes in complex litigation and arbitration matters.</p><a href="attorneys.html">View Profile <span>&rarr;</span></a></div></article>
-          <article class="attorney-card"><img src="assets/attorney-amit.png" alt="Amit Bansal"><div><span>Partner</span><h3>Amit Bansal</h3><p>Advises on tax planning, regulatory compliance and structuring.</p><a href="attorneys.html">View Profile <span>&rarr;</span></a></div></article>
+          <article class="attorney-card"><img src="assets/images/team/attorney-rajesh.png" alt="Rajesh Sharma"><div><span>Partner</span><h3>Rajesh Sharma</h3><p>Corporate &amp; Commercial Law expert with 30+ years of experience.</p><a href="attorneys.html">View Profile <span>&rarr;</span></a></div></article>
+          <article class="attorney-card"><img src="assets/images/team/attorney-meera.png" alt="Meera Gupta"><div><span>Senior Partner</span><h3>Meera Gupta</h3><p>Specializes in complex litigation and arbitration matters.</p><a href="attorneys.html">View Profile <span>&rarr;</span></a></div></article>
+          <article class="attorney-card"><img src="assets/images/team/attorney-amit.png" alt="Amit Bansal"><div><span>Partner</span><h3>Amit Bansal</h3><p>Advises on tax planning, regulatory compliance and structuring.</p><a href="attorneys.html">View Profile <span>&rarr;</span></a></div></article>
+          <article class="attorney-card"><img src="assets/images/team/attorney-rajesh.png" alt="Rajesh Sharma"><div><span>Partner</span><h3>Rajesh Sharma</h3><p>Corporate &amp; Commercial Law expert with 30+ years of experience.</p><a href="attorneys.html">View Profile <span>&rarr;</span></a></div></article>
+          <article class="attorney-card"><img src="assets/images/team/attorney-meera.png" alt="Meera Gupta"><div><span>Senior Partner</span><h3>Meera Gupta</h3><p>Specializes in complex litigation and arbitration matters.</p><a href="attorneys.html">View Profile <span>&rarr;</span></a></div></article>
+          <article class="attorney-card"><img src="assets/images/team/attorney-amit.png" alt="Amit Bansal"><div><span>Partner</span><h3>Amit Bansal</h3><p>Advises on tax planning, regulatory compliance and structuring.</p><a href="attorneys.html">View Profile <span>&rarr;</span></a></div></article>
         </div>
       </div>
     </section>
@@ -160,8 +198,10 @@
     <footer id="contact" class="footer-band">
       <section class="footer-brand">
         <span class="brand-mark"><i>J</i><i>S</i><i>B</i></span>
+        <span class="brand-divider"></span>
         <strong>JSB &amp; Partners</strong>
         <small>Advocates &amp; Legal Consultants</small>
+        <em>Advisory &bull; Strategy &bull; Growth</em>
         <p>Providing strategic legal counsel with integrity, clarity and commitment.</p>
       </section>
       <section>
@@ -189,6 +229,6 @@
       <div class="footer-bottom"><p>&copy; 2026 JSB &amp; Partners. All rights reserved.</p><nav><a href="#">Privacy Policy</a><span>|</span><a href="#">Terms of Use</a><span>|</span><a href="#">Disclaimer</a></nav></div>
     </footer>
   </main>
-  <script src="script.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>

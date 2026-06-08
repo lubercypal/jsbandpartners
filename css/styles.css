@@ -46,7 +46,7 @@ p {
   inset: 0 0 auto;
   z-index: 50;
   display: grid;
-  grid-template-columns: 270px 1fr 170px;
+  grid-template-columns: 360px 1fr 170px;
   align-items: center;
   gap: 36px;
   height: 86px;
@@ -58,7 +58,7 @@ p {
 .brand {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 18px;
 }
 
 .brand-mark {
@@ -67,20 +67,11 @@ p {
   grid-template-columns: repeat(3, auto);
   gap: 0;
   font-family: var(--serif);
-  font-size: 34px;
+  color: #a80f14;
+  font-size: 46px;
   font-weight: 600;
   line-height: .9;
   letter-spacing: -.08em;
-}
-
-.brand-mark::after {
-  content: "";
-  position: absolute;
-  left: 12%;
-  right: 2%;
-  bottom: -7px;
-  height: 1px;
-  background: rgba(177, 132, 72, .55);
 }
 
 .brand-mark i {
@@ -88,8 +79,14 @@ p {
 }
 
 .brand-mark i:nth-child(2) {
-  color: var(--gold);
+  color: #c0181f;
   transform: translateY(5px);
+}
+
+.brand-divider {
+  width: 1px;
+  height: 52px;
+  background: rgba(168, 15, 20, .7);
 }
 
 .brand strong,
@@ -97,8 +94,9 @@ p {
   display: block;
   text-transform: uppercase;
   letter-spacing: .12em;
-  font-size: 13px;
+  font-size: 18px;
   line-height: 1.15;
+  white-space: nowrap;
 }
 
 .brand small,
@@ -111,14 +109,79 @@ p {
   font-weight: 800;
 }
 
+.brand-copy em,
+.footer-brand em {
+  display: block;
+  margin-top: 5px;
+  color: #a80f14;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  font-size: 9px;
+  font-style: normal;
+  font-weight: 800;
+}
+
 .top-nav {
   display: flex;
   justify-content: center;
-  gap: 48px;
+  gap: 34px;
   text-transform: uppercase;
   letter-spacing: .15em;
   font-size: 10px;
   font-weight: 800;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.top-nav > a,
+.nav-item > a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+.submenu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: -18px;
+  min-width: 190px;
+  padding: 10px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: opacity .22s ease, transform .22s ease, visibility .22s ease;
+  background: rgba(244, 239, 230, .72);
+  border: 1px solid rgba(7, 31, 58, .08);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 18px 40px rgba(7, 31, 58, .08);
+}
+
+.submenu a {
+  display: block;
+  padding: 10px 12px;
+  color: var(--navy);
+  letter-spacing: .12em;
+  white-space: nowrap;
+}
+
+.has-menu:hover > .submenu,
+.has-menu:focus-within > .submenu,
+.subitem:hover > .submenu,
+.subitem:focus-within > .submenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.subitem {
+  position: relative;
+}
+
+.submenu.level-two {
+  top: -10px;
+  left: calc(100% + 10px);
 }
 
 .consult-btn,
@@ -352,7 +415,7 @@ p {
   color: #fff;
   background:
     linear-gradient(90deg, rgba(7,31,58,.98), rgba(10,42,76,.96)),
-    url("assets/legal-library.png") center / cover no-repeat;
+    url("../assets/images/library/legal-library.png") center / cover no-repeat;
 }
 
 .stats-band div {
@@ -422,9 +485,9 @@ p {
 }
 
 .firm-copy p {
-  max-width: 310px;
+  max-width: 470px;
   color: var(--muted);
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .firm-band img {
@@ -437,7 +500,7 @@ p {
 .firm-quote {
   background:
     linear-gradient(rgba(244,239,230,.88), rgba(244,239,230,.92)),
-    url("assets/hero-stairs-carousel.png") center / cover no-repeat;
+    url("../assets/images/banner/hero-stairs-carousel.png") center / cover no-repeat;
 }
 
 .firm-quote div {
@@ -475,9 +538,7 @@ p {
 }
 
 .matters-band {
-  display: grid;
-  grid-template-columns: 260px repeat(3, 1fr);
-  gap: 48px;
+  display: block;
   padding-top: 48px;
   padding-bottom: 58px;
   border-top: 0;
@@ -487,6 +548,14 @@ p {
 .matter-title {
   align-self: start;
   flex-wrap: wrap;
+}
+
+.matters-marquee {
+  margin-top: 38px;
+}
+
+.matter-track {
+  animation-duration: 38s;
 }
 
 .matter-title a,
@@ -500,6 +569,9 @@ p {
 }
 
 .matters-band article {
+  width: 290px;
+  flex: 0 0 auto;
+  margin-right: 54px;
   padding-left: 40px;
   border-left: 1px solid rgba(255,255,255,.18);
 }
@@ -535,19 +607,20 @@ p {
 }
 
 .attorney-track {
-  gap: 80px;
+  gap: 30px;
 }
 
 .attorney-card {
-  width: 370px;
+  width: 345px;
   display: grid;
   grid-template-columns: 120px 1fr;
-  gap: 28px;
+  gap: 20px;
   flex: 0 0 auto;
-  padding: 18px;
-  background: rgba(255, 253, 249, .48);
-  border: 1px solid rgba(7, 31, 58, .08);
-  box-shadow: 0 14px 32px rgba(7, 31, 58, .035);
+  padding: 0 18px 0 0;
+  background: transparent;
+  border: 0;
+  border-right: 1px solid rgba(7, 31, 58, .12);
+  box-shadow: none;
 }
 
 .attorney-card img {
@@ -606,8 +679,9 @@ p {
 }
 
 .testimonial-wrap {
+  position: relative;
   width: min(850px, 86vw);
-  min-height: 160px;
+  min-height: 185px;
   margin: 38px auto 18px;
   display: grid;
   grid-template-columns: 80px 1fr;
@@ -623,11 +697,18 @@ p {
 }
 
 .testimonial-slide {
-  display: none;
+  position: absolute;
+  inset: 0 0 0 110px;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity .45s ease, transform .45s ease;
+  pointer-events: none;
 }
 
 .testimonial-slide.is-active {
-  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
 .testimonial-slide blockquote {
@@ -668,18 +749,19 @@ p {
   grid-template-columns: 1.2fr .8fr 1.1fr 1.1fr;
   gap: 56px;
   padding: 58px 84px 32px;
-  color: rgba(255,255,255,.76);
+  color: var(--muted);
+  background: var(--paper);
 }
 
 .footer-brand .brand-mark {
   display: inline-grid;
-  color: #fff;
+  color: #a80f14;
   margin-bottom: 12px;
 }
 
 .footer-band h2,
 .footer-band strong {
-  color: #fff;
+  color: var(--navy);
 }
 
 .footer-band p,
@@ -692,7 +774,7 @@ p {
 .footer-band form {
   display: flex;
   margin-top: 24px;
-  border: 1px solid rgba(255,255,255,.22);
+  border: 1px solid var(--line);
 }
 
 .footer-band label {
@@ -707,15 +789,15 @@ p {
   flex: 1;
   border: 0;
   padding: 13px 16px;
-  color: #fff;
+  color: var(--navy);
   background: transparent;
 }
 
 .footer-band button {
   width: 48px;
   border: 0;
-  color: var(--navy);
-  background: var(--white);
+  color: #fff;
+  background: var(--navy);
 }
 
 .footer-bottom {
@@ -725,7 +807,7 @@ p {
   gap: 24px;
   margin-top: 28px;
   padding-top: 28px;
-  border-top: 1px solid rgba(255,255,255,.18);
+  border-top: 1px solid var(--line);
 }
 
 .footer-bottom nav {
@@ -854,6 +936,10 @@ p {
   .testimonial-wrap {
     grid-template-columns: 1fr;
     gap: 10px;
+  }
+
+  .testimonial-slide {
+    inset: 92px 0 0;
   }
 
   .testimonial-slide blockquote {

@@ -34,17 +34,17 @@ heroControls.forEach((button, index) => {
 startHeroCarousel();
 
 const counters = Array.from(document.querySelectorAll("[data-count]"));
-let countersStarted = false;
 
 function formatCounter(value) {
   return value >= 1000 ? value.toLocaleString("en-US") : String(value);
 }
 
 function animateCounters() {
-  if (countersStarted) return;
-  countersStarted = true;
-
   counters.forEach((counter) => {
+    if (counter.dataset.running === "true") return;
+    counter.dataset.running = "true";
+    counter.textContent = "0";
+
     const target = Number(counter.dataset.count);
     const suffix = counter.dataset.suffix || "";
     const duration = 1500;
@@ -58,6 +58,8 @@ function animateCounters() {
 
       if (progress < 1) {
         requestAnimationFrame(tick);
+      } else {
+        counter.dataset.running = "false";
       }
     }
 
@@ -67,9 +69,8 @@ function animateCounters() {
 
 if ("IntersectionObserver" in window && counters.length) {
   const counterObserver = new IntersectionObserver((entries) => {
-    if (entries.some((entry) => entry.isIntersecting)) {
+    if (entries.some((entry) => entry.isIntersecting && entry.intersectionRatio >= 0.35)) {
       animateCounters();
-      counterObserver.disconnect();
     }
   }, { threshold: 0.35 });
 

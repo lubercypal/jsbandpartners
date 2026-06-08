@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="620" height="190" viewBox="0 0 620 190" role="img" aria-labelledby="title desc">
+  <title id="title">JSB &amp; Partners logo</title>
+  <desc id="desc">Red JSB monogram with divider and JSB &amp; Partners wordmark.</desc>
+  <rect width="620" height="190" fill="#f4efe6"/>
+  <g fill="#b1121b" font-family="Georgia, serif" font-weight="700">
+    <text x="34" y="118" font-size="112" letter-spacing="-16">JSB</text>
+  </g>
+  <line x1="218" y1="36" x2="218" y2="154" stroke="#c51d25" stroke-width="2"/>
+  <g fill="#101820" font-family="Georgia, serif">
+    <text x="252" y="82" font-size="44" letter-spacing="6">JSB &amp;</text>
+    <text x="252" y="130" font-size="44" letter-spacing="6">PARTNERS</text>
+  </g>
+  <text x="254" y="160" fill="#b1121b" font-family="Arial, sans-serif" font-size="14" font-weight="700" letter-spacing="2">
+    ADVOCATES &amp; LEGAL CONSULTANTS  &#8226;  ADVISORY  &#8226;  STRATEGY  &#8226;  GROWTH
+  </text>
+</svg>
