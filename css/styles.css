@@ -105,6 +105,7 @@ p {
 }
 
 .menu-toggle,
+.menu-close,
 .mobile-dock {
   display: none;
 }
@@ -1201,17 +1202,35 @@ p {
     right: 0;
     z-index: 46;
     display: grid;
-    max-height: calc(100vh - 92px);
+    grid-template-columns: 1fr;
+    align-content: start;
+    max-height: none;
+    min-height: 100vh;
     overflow-y: auto;
     gap: 0;
-    padding: 20px 24px 118px;
-    background: var(--navy);
+    padding: 58px 38px 126px;
+    background: #061b2e;
     color: #fff;
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
     transform: translateY(-10px);
     transition: opacity .24s ease, transform .24s ease, visibility .24s ease;
+  }
+
+  .menu-close {
+    position: fixed;
+    top: 38px;
+    right: 36px;
+    z-index: 48;
+    display: block;
+    border: 0;
+    color: rgba(255, 255, 255, .92);
+    background: transparent;
+    font-family: var(--sans);
+    font-size: 34px;
+    line-height: 1;
+    cursor: pointer;
   }
 
   body.nav-open .top-nav {
@@ -1221,14 +1240,27 @@ p {
     transform: translateY(0);
   }
 
+  body:not(.nav-open) .menu-close {
+    display: none;
+  }
+
   .top-nav > a,
   .nav-item > a {
-    min-height: 46px;
-    border-bottom: 1px solid rgba(255, 255, 255, .12);
+    display: inline-flex;
+    width: max-content;
+    min-height: 0;
+    margin-bottom: 6px;
+    border-bottom: 0;
+    color: #fff;
+    font-size: clamp(34px, 8vw, 56px);
+    line-height: 1.02;
+    letter-spacing: -.02em;
+    font-weight: 800;
   }
 
   .nav-item {
-    border-bottom: 1px solid rgba(255, 255, 255, .12);
+    margin-bottom: 4px;
+    border-bottom: 0;
   }
 
   .nav-item > a {
@@ -1240,10 +1272,13 @@ p {
   .submenu.level-two {
     position: static;
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 28px;
+    row-gap: 10px;
     width: auto;
     min-width: 0;
-    padding: 0 0 12px 18px;
+    max-width: 460px;
+    padding: 12px 0 20px 2px;
     opacity: 1;
     visibility: visible;
     transform: none;
@@ -1258,10 +1293,15 @@ p {
   .practice-menu > .subitem > a,
   .submenu.level-two a {
     min-height: 0;
-    padding: 8px 0;
+    width: max-content;
+    padding: 0;
     border: 0;
     color: rgba(255, 255, 255, .78);
-    font-size: 11px;
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: 14px;
+    line-height: 1.45;
+    font-weight: 600;
   }
 
   .submenu > a::before,
@@ -1270,7 +1310,8 @@ p {
   }
 
   .submenu.level-two {
-    padding: 0 0 6px 16px;
+    grid-column: 1 / -1;
+    padding: 6px 0 0 16px;
   }
 
   .header-actions {
@@ -1339,6 +1380,18 @@ p {
     stroke-width: 6;
     stroke-linecap: round;
     stroke-linejoin: round;
+  }
+
+  .hamburger-close {
+    display: none;
+  }
+
+  body.nav-open .hamburger-lines {
+    display: none;
+  }
+
+  body.nav-open .hamburger-close {
+    display: block;
   }
 
   .hero-copy {

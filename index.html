@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&amp;family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=20260609-svg-hamburger">
+  <link rel="stylesheet" href="css/styles.css?v=20260609-menu-panel">
 </head>
 <body>
   <header class="top-header">
@@ -15,6 +15,7 @@
       <img src="assets/logo/jsb-partners-logo.svg" alt="JSB &amp; Partners">
     </a>
     <nav class="top-nav" aria-label="Primary navigation">
+      <button class="menu-close" type="button" aria-label="Close menu">&times;</button>
       <div class="nav-item has-menu">
         <a href="#practice">Practice Areas</a>
         <div class="submenu practice-menu">
@@ -81,7 +82,8 @@
     </a>
     <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
       <svg class="hamburger-icon" viewBox="0 0 74 58" aria-hidden="true" focusable="false">
-        <path d="M16 13h42M16 29h42M16 45h42"/>
+        <path class="hamburger-lines" d="M16 13h42M16 29h42M16 45h42"/>
+        <path class="hamburger-close" d="M20 16 54 44M54 16 20 44"/>
       </svg>
     </button>
   </nav>
@@ -290,6 +292,6 @@
       <div class="footer-bottom"><p>&copy; 2026 JSB &amp; Partners. All rights reserved.</p><nav><a href="#">Privacy Policy</a><span>|</span><a href="#">Terms of Use</a><span>|</span><a href="#">Disclaimer</a></nav></div>
     </footer>
   </main>
-  <script src="js/script.js?v=20260609-svg-hamburger"></script>
+  <script src="js/script.js?v=20260609-menu-panel"></script>
 </body>
 </html>

@@ -1,6 +1,7 @@
 const heroSlides = Array.from(document.querySelectorAll(".hero-slide"));
 const heroControls = Array.from(document.querySelectorAll(".hero-index button"));
 const menuToggles = Array.from(document.querySelectorAll(".menu-toggle"));
+const menuClose = document.querySelector(".menu-close");
 const topNav = document.querySelector(".top-nav");
 let activeHeroControl = 0;
 let heroTimer;
@@ -24,6 +25,12 @@ if (menuToggles.length && topNav) {
       setNavState(false);
     });
   });
+
+  if (menuClose) {
+    menuClose.addEventListener("click", () => {
+      setNavState(false);
+    });
+  }
 }
 
 function showHero(controlIndex) {
