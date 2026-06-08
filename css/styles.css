@@ -46,7 +46,7 @@ p {
   inset: 0 0 auto;
   z-index: 50;
   display: grid;
-  grid-template-columns: 360px 1fr 170px;
+  grid-template-columns: 420px 1fr 170px;
   align-items: center;
   gap: 36px;
   height: 86px;
@@ -58,35 +58,13 @@ p {
 .brand {
   display: flex;
   align-items: center;
-  gap: 18px;
 }
 
-.brand-mark {
-  position: relative;
-  display: inline-grid;
-  grid-template-columns: repeat(3, auto);
-  gap: 0;
-  font-family: var(--serif);
-  color: #a80f14;
-  font-size: 46px;
-  font-weight: 600;
-  line-height: .9;
-  letter-spacing: -.08em;
-}
-
-.brand-mark i {
-  font-style: normal;
-}
-
-.brand-mark i:nth-child(2) {
-  color: #c0181f;
-  transform: translateY(5px);
-}
-
-.brand-divider {
-  width: 1px;
-  height: 52px;
-  background: rgba(168, 15, 20, .7);
+.brand img {
+  width: 360px;
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 .brand strong,
@@ -106,18 +84,6 @@ p {
   text-transform: uppercase;
   letter-spacing: .13em;
   font-size: 9px;
-  font-weight: 800;
-}
-
-.brand-copy em,
-.footer-brand em {
-  display: block;
-  margin-top: 5px;
-  color: #a80f14;
-  text-transform: uppercase;
-  letter-spacing: .14em;
-  font-size: 9px;
-  font-style: normal;
   font-weight: 800;
 }
 
@@ -222,7 +188,25 @@ p {
   transition: opacity .8s ease;
   background:
     linear-gradient(90deg, rgba(247,244,239,1) 0%, rgba(247,244,239,.94) 38%, rgba(247,244,239,.22) 61%, rgba(247,244,239,0) 100%),
-    var(--hero-image) center right / cover no-repeat;
+    none;
+}
+
+.hero-slide.slide-stairs {
+  background:
+    linear-gradient(90deg, rgba(247,244,239,1) 0%, rgba(247,244,239,.94) 38%, rgba(247,244,239,.22) 61%, rgba(247,244,239,0) 100%),
+    url("../assets/images/banner/hero-stairs-carousel.png") center right / cover no-repeat;
+}
+
+.hero-slide.slide-boardroom {
+  background:
+    linear-gradient(90deg, rgba(247,244,239,1) 0%, rgba(247,244,239,.94) 38%, rgba(247,244,239,.22) 61%, rgba(247,244,239,0) 100%),
+    url("../assets/images/banner/hero-boardroom-carousel.png") center right / cover no-repeat;
+}
+
+.hero-slide.slide-court {
+  background:
+    linear-gradient(90deg, rgba(247,244,239,1) 0%, rgba(247,244,239,.94) 38%, rgba(247,244,239,.22) 61%, rgba(247,244,239,0) 100%),
+    url("../assets/images/banner/hero-court-warm.png") center right / cover no-repeat;
 }
 
 .hero-slide.is-active {
@@ -607,11 +591,11 @@ p {
 }
 
 .attorney-track {
-  gap: 30px;
+  gap: 22px;
 }
 
 .attorney-card {
-  width: 345px;
+  width: 430px;
   display: grid;
   grid-template-columns: 120px 1fr;
   gap: 20px;
@@ -680,7 +664,7 @@ p {
 
 .testimonial-wrap {
   position: relative;
-  width: min(850px, 86vw);
+  width: min(1040px, 90vw);
   min-height: 185px;
   margin: 38px auto 18px;
   display: grid;
@@ -746,17 +730,18 @@ p {
 
 .footer-band {
   display: grid;
-  grid-template-columns: 1.2fr .8fr 1.1fr 1.1fr;
-  gap: 56px;
-  padding: 58px 84px 32px;
+  grid-template-columns: 1.25fr .7fr 1.35fr 1fr;
+  gap: 42px;
+  padding: 56px 70px 30px;
   color: var(--muted);
   background: var(--paper);
 }
 
-.footer-brand .brand-mark {
-  display: inline-grid;
-  color: #a80f14;
-  margin-bottom: 12px;
+.footer-brand img {
+  width: 310px;
+  max-width: 100%;
+  display: block;
+  margin-bottom: 18px;
 }
 
 .footer-band h2,
@@ -769,6 +754,32 @@ p {
   display: block;
   margin: 6px 0;
   font-size: 12px;
+}
+
+.office-list {
+  display: grid;
+  gap: 14px;
+}
+
+.office-list p {
+  margin: 0;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(7,31,58,.1);
+}
+
+.office-list strong,
+.office-list span,
+.office-list a {
+  display: block;
+}
+
+.office-list strong {
+  color: var(--navy);
+  font-size: 13px;
+}
+
+.office-list span {
+  margin: 2px 0;
 }
 
 .footer-band form {
@@ -876,9 +887,25 @@ p {
   }
 
   .hero-slide {
+    background-position: center bottom;
+  }
+
+  .hero-slide.slide-stairs {
     background:
       linear-gradient(180deg, rgba(247,244,239,.96) 0%, rgba(247,244,239,.84) 44%, rgba(247,244,239,.3) 100%),
-      var(--hero-image) center bottom / cover no-repeat;
+      url("../assets/images/banner/hero-stairs-carousel.png") center bottom / cover no-repeat;
+  }
+
+  .hero-slide.slide-boardroom {
+    background:
+      linear-gradient(180deg, rgba(247,244,239,.96) 0%, rgba(247,244,239,.84) 44%, rgba(247,244,239,.3) 100%),
+      url("../assets/images/banner/hero-boardroom-carousel.png") center bottom / cover no-repeat;
+  }
+
+  .hero-slide.slide-court {
+    background:
+      linear-gradient(180deg, rgba(247,244,239,.96) 0%, rgba(247,244,239,.84) 44%, rgba(247,244,239,.3) 100%),
+      url("../assets/images/banner/hero-court-warm.png") center bottom / cover no-repeat;
   }
 
   .hero-copy {
