@@ -97,6 +97,18 @@ p {
   font-weight: 700;
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.mobile-whatsapp,
+.menu-toggle {
+  display: none;
+}
+
 .nav-item {
   position: relative;
 }
@@ -248,7 +260,8 @@ p {
 .dark-btn,
 .text-link,
 .attorney-card a,
-.matters-band article a {
+.matters-band article a,
+.updates-grid article a {
   display: inline-flex;
   align-items: center;
   gap: 16px;
@@ -269,7 +282,7 @@ p {
 
 .whatsapp-contact {
   position: fixed;
-  left: 28px;
+  left: 18px;
   bottom: 28px;
   z-index: 48;
   display: inline-grid;
@@ -434,8 +447,7 @@ p {
 
 .stats-band,
 .matters-band,
-.testimonials-band,
-.footer-band {
+.testimonials-band {
   background-color: var(--navy);
   color: #fff;
 }
@@ -659,7 +671,8 @@ p {
 }
 
 .matter-title a,
-.attorney-title a {
+.attorney-title a,
+.updates-title a {
   margin-left: auto;
   color: currentColor;
   text-transform: uppercase;
@@ -694,6 +707,60 @@ p {
   letter-spacing: 0;
   text-transform: none;
   font-size: 12px;
+}
+
+.updates-band {
+  padding-top: 56px;
+  padding-bottom: 62px;
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+}
+
+.updates-title {
+  margin-bottom: 34px;
+}
+
+.updates-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+
+.updates-grid article {
+  min-height: 246px;
+  padding: 28px 24px 24px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.updates-grid article span {
+  display: block;
+  margin-bottom: 18px;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: .15em;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.updates-grid h3 {
+  margin-bottom: 14px;
+  color: var(--navy);
+  font-family: var(--serif);
+  font-size: 23px;
+  line-height: 1.15;
+  font-weight: 600;
+}
+
+.updates-grid p {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.updates-grid article a {
+  margin-top: 18px;
+  color: var(--navy);
 }
 
 .attorney-band {
@@ -1091,12 +1158,136 @@ p {
 }
 
 @media (max-width: 1100px) {
+  body.nav-open {
+    overflow: hidden;
+  }
+
   .top-header {
     grid-template-columns: 1fr auto;
     padding: 0 24px;
   }
 
   .top-nav {
+    position: fixed;
+    top: 86px;
+    left: 0;
+    right: 0;
+    z-index: 46;
+    display: grid;
+    max-height: calc(100vh - 86px);
+    overflow-y: auto;
+    gap: 0;
+    padding: 20px 24px 28px;
+    background: var(--navy);
+    color: #fff;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: opacity .24s ease, transform .24s ease, visibility .24s ease;
+  }
+
+  body.nav-open .top-nav {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .top-nav > a,
+  .nav-item > a {
+    min-height: 46px;
+    border-bottom: 1px solid rgba(255, 255, 255, .12);
+  }
+
+  .nav-item {
+    border-bottom: 1px solid rgba(255, 255, 255, .12);
+  }
+
+  .nav-item > a {
+    border-bottom: 0;
+  }
+
+  .submenu,
+  .practice-menu,
+  .submenu.level-two {
+    position: static;
+    display: grid;
+    grid-template-columns: 1fr;
+    width: auto;
+    min-width: 0;
+    padding: 0 0 12px 18px;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+  }
+
+  .submenu > a,
+  .submenu > .subitem > a,
+  .practice-menu > a,
+  .practice-menu > .subitem > a,
+  .submenu.level-two a {
+    min-height: 0;
+    padding: 8px 0;
+    border: 0;
+    color: rgba(255, 255, 255, .78);
+    font-size: 11px;
+  }
+
+  .submenu > a::before,
+  .submenu > .subitem > a::before {
+    content: none;
+  }
+
+  .submenu.level-two {
+    padding: 0 0 6px 16px;
+  }
+
+  .header-actions {
+    gap: 8px;
+  }
+
+  .mobile-whatsapp,
+  .menu-toggle {
+    display: inline-grid;
+    place-items: center;
+    flex: 0 0 auto;
+    width: 48px;
+    height: 48px;
+    border: 1px solid var(--line);
+    background: transparent;
+    color: var(--navy);
+  }
+
+  .mobile-whatsapp {
+    border-color: #25d366;
+    color: #fff;
+    background: #25d366;
+  }
+
+  .mobile-whatsapp svg {
+    width: 27px;
+    height: 27px;
+    fill: currentColor;
+  }
+
+  .menu-toggle {
+    gap: 4px;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  .menu-toggle span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: currentColor;
+  }
+
+  .whatsapp-contact {
     display: none;
   }
 
@@ -1105,7 +1296,8 @@ p {
   }
 
   .firm-band,
-  .matters-band {
+  .matters-band,
+  .updates-grid {
     grid-template-columns: 1fr;
   }
 
@@ -1132,9 +1324,13 @@ p {
   }
 }
 
-@media (max-width: 1280px) {
+@media (min-width: 1101px) and (max-width: 1280px) {
   .practice-menu {
     grid-template-columns: repeat(4, minmax(160px, 1fr));
+  }
+
+  .updates-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
@@ -1149,6 +1345,14 @@ p {
 
   .consult-btn {
     width: max-content;
+    min-height: 42px;
+    padding: 0 14px;
+    font-size: 9px;
+  }
+
+  .header-actions {
+    justify-content: flex-start;
+    flex-wrap: wrap;
   }
 
   .whatsapp-contact {
