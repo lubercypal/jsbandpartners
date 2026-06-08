@@ -104,8 +104,8 @@ p {
   gap: 12px;
 }
 
-.mobile-whatsapp,
-.menu-toggle {
+.menu-toggle,
+.mobile-dock {
   display: none;
 }
 
@@ -300,6 +300,20 @@ p {
   height: 31px;
   display: block;
   fill: currentColor;
+}
+
+.mobile-dock svg {
+  display: block;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.mobile-dock .dock-whatsapp svg {
+  fill: currentColor;
+  stroke: none;
 }
 
 .hero {
@@ -1162,9 +1176,17 @@ p {
     overflow: hidden;
   }
 
+  body {
+    padding-bottom: 108px;
+  }
+
   .top-header {
-    grid-template-columns: 1fr auto;
+    grid-template-columns: 1fr;
     padding: 0 24px;
+  }
+
+  .brand {
+    justify-content: center;
   }
 
   .top-nav {
@@ -1177,7 +1199,7 @@ p {
     max-height: calc(100vh - 86px);
     overflow-y: auto;
     gap: 0;
-    padding: 20px 24px 28px;
+    padding: 20px 24px 118px;
     background: var(--navy);
     color: #fff;
     opacity: 0;
@@ -1247,48 +1269,66 @@ p {
   }
 
   .header-actions {
-    gap: 8px;
-  }
-
-  .mobile-whatsapp,
-  .menu-toggle {
-    display: inline-grid;
-    place-items: center;
-    flex: 0 0 auto;
-    width: 48px;
-    height: 48px;
-    border: 1px solid var(--line);
-    background: transparent;
-    color: var(--navy);
-  }
-
-  .mobile-whatsapp {
-    border-color: #25d366;
-    color: #fff;
-    background: #25d366;
-  }
-
-  .mobile-whatsapp svg {
-    width: 27px;
-    height: 27px;
-    fill: currentColor;
-  }
-
-  .menu-toggle {
-    gap: 4px;
-    padding: 0;
-    cursor: pointer;
-  }
-
-  .menu-toggle span {
-    display: block;
-    width: 20px;
-    height: 2px;
-    background: currentColor;
+    display: none;
   }
 
   .whatsapp-contact {
     display: none;
+  }
+
+  .mobile-dock {
+    position: fixed;
+    left: 50%;
+    bottom: 18px;
+    z-index: 70;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: center;
+    width: min(620px, calc(100% - 28px));
+    height: 72px;
+    transform: translateX(-50%);
+    overflow: hidden;
+    border: 8px solid rgba(244, 239, 230, .96);
+    border-radius: 28px;
+    background: linear-gradient(90deg, #62c88c 0%, #66bbad 48%, #6fa7ce 100%);
+    box-shadow: 0 22px 42px rgba(7, 31, 58, .22);
+  }
+
+  .mobile-dock a,
+  .mobile-dock button {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    color: #fff;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .mobile-dock svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .dock-logo {
+    color: #fff;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -.08em;
+  }
+
+  .menu-toggle {
+    gap: 5px;
+  }
+
+  .menu-toggle span {
+    display: block;
+    width: 34px;
+    height: 4px;
+    border-radius: 999px;
+    background: currentColor;
   }
 
   .hero-copy {
@@ -1336,11 +1376,20 @@ p {
 
 @media (max-width: 680px) {
   .top-header {
-    height: auto;
+    height: 76px;
     min-height: 76px;
     grid-template-columns: 1fr;
-    gap: 12px;
-    padding: 16px 20px;
+    gap: 0;
+    padding: 0 20px;
+  }
+
+  .brand img {
+    height: 54px;
+  }
+
+  .top-nav {
+    top: 76px;
+    max-height: calc(100vh - 160px);
   }
 
   .consult-btn {
@@ -1355,16 +1404,26 @@ p {
     flex-wrap: wrap;
   }
 
-  .whatsapp-contact {
-    left: 18px;
-    bottom: 18px;
-    width: 48px;
-    height: 48px;
+  .mobile-dock {
+    bottom: 12px;
+    width: min(520px, calc(100% - 18px));
+    height: 68px;
+    border-width: 7px;
+    border-radius: 24px;
   }
 
-  .whatsapp-contact svg {
-    width: 27px;
-    height: 27px;
+  .mobile-dock svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  .dock-logo {
+    font-size: 20px;
+  }
+
+  .menu-toggle span {
+    width: 30px;
+    height: 3px;
   }
 
   .hero {

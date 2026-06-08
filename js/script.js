@@ -1,20 +1,27 @@
 const heroSlides = Array.from(document.querySelectorAll(".hero-slide"));
 const heroControls = Array.from(document.querySelectorAll(".hero-index button"));
-const menuToggle = document.querySelector(".menu-toggle");
+const menuToggles = Array.from(document.querySelectorAll(".menu-toggle"));
 const topNav = document.querySelector(".top-nav");
 let activeHeroControl = 0;
 let heroTimer;
 
-if (menuToggle && topNav) {
-  menuToggle.addEventListener("click", () => {
-    const isOpen = document.body.classList.toggle("nav-open");
-    menuToggle.setAttribute("aria-expanded", String(isOpen));
+if (menuToggles.length && topNav) {
+  function setNavState(isOpen) {
+    document.body.classList.toggle("nav-open", isOpen);
+    menuToggles.forEach((toggle) => {
+      toggle.setAttribute("aria-expanded", String(isOpen));
+    });
+  }
+
+  menuToggles.forEach((toggle) => {
+    toggle.addEventListener("click", () => {
+      setNavState(!document.body.classList.contains("nav-open"));
+    });
   });
 
   topNav.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => {
-      document.body.classList.remove("nav-open");
-      menuToggle.setAttribute("aria-expanded", "false");
+      setNavState(false);
     });
   });
 }
