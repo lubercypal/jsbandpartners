@@ -46,7 +46,7 @@ p {
   inset: 0 0 auto;
   z-index: 50;
   display: grid;
-  grid-template-columns: 420px 1fr 170px;
+  grid-template-columns: 300px 1fr 170px;
   align-items: center;
   gap: 36px;
   height: 86px;
@@ -61,9 +61,9 @@ p {
 }
 
 .brand img {
-  width: 360px;
+  width: auto;
   max-width: 100%;
-  height: auto;
+  height: 66px;
   display: block;
 }
 
@@ -144,11 +144,15 @@ p {
   visibility: hidden;
   transform: translateY(-10px);
   transition: opacity .32s ease, transform .32s ease, visibility .32s ease;
-  background: rgba(7, 31, 58, .58);
+  background: var(--navy);
   border-top: 1px solid rgba(255, 255, 255, .18);
   border-bottom: 1px solid rgba(255, 255, 255, .16);
-  backdrop-filter: blur(20px);
+  backdrop-filter: none;
   box-shadow: 0 999px 0 999px rgba(7, 31, 58, .26), 0 24px 70px rgba(7, 31, 58, .16);
+}
+
+.practice-menu {
+  grid-template-columns: repeat(5, minmax(170px, 1fr));
 }
 
 .submenu > a,
@@ -164,6 +168,12 @@ p {
   white-space: nowrap;
   border-left: 1px solid rgba(255, 255, 255, .16);
   transition: color .24s ease, background-color .24s ease;
+}
+
+.practice-menu > a,
+.practice-menu > .subitem > a {
+  min-height: 112px;
+  padding-top: 50px;
 }
 
 .submenu > a::before,
@@ -201,16 +211,16 @@ p {
 
 .submenu.level-two {
   position: absolute;
-  top: 84px;
+  top: 76px;
   left: 28px;
   z-index: 60;
   display: block;
   width: max-content;
   min-width: 186px;
   padding: 8px;
-  background: rgba(7, 31, 58, .86);
-  border: 1px solid rgba(255, 255, 255, .16);
-  box-shadow: 0 18px 44px rgba(7, 31, 58, .2);
+  background: var(--paper);
+  border: 1px solid rgba(7, 31, 58, .12);
+  box-shadow: 0 18px 44px rgba(7, 31, 58, .18);
 }
 
 .submenu.level-two a {
@@ -218,7 +228,7 @@ p {
   min-height: 0;
   padding: 12px 15px;
   border: 0;
-  color: rgba(255, 255, 255, .96);
+  color: var(--navy);
   font-size: 12px;
   font-weight: 700;
   white-space: nowrap;
@@ -226,8 +236,8 @@ p {
 
 .submenu.level-two a:hover,
 .submenu.level-two a:focus-visible {
-  background: rgba(255, 255, 255, .1);
-  color: #fff;
+  background: rgba(7, 31, 58, .06);
+  color: var(--navy);
 }
 
 .submenu.level-two a::before {
@@ -877,7 +887,11 @@ p {
 .footer-band .stay-copy p {
   margin: 16px 0 28px;
   color: #51575b;
-  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 700;
 }
 
 .footer-band form {
@@ -903,7 +917,16 @@ p {
   padding: 12px 0;
   color: var(--navy);
   background: transparent;
-  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.footer-band input::placeholder {
+  color: #70777a;
+  opacity: 1;
 }
 
 .footer-band button {
@@ -930,9 +953,9 @@ p {
   border-bottom: 1px solid var(--line);
   color: var(--navy);
   text-transform: uppercase;
-  letter-spacing: .16em;
-  font-size: 11px;
-  font-weight: 800;
+  letter-spacing: .1em;
+  font-size: 12px;
+  font-weight: 700;
 }
 
 .footer-cities i {
@@ -1087,6 +1110,12 @@ p {
   }
 }
 
+@media (max-width: 1280px) {
+  .practice-menu {
+    grid-template-columns: repeat(4, minmax(160px, 1fr));
+  }
+}
+
 @media (max-width: 680px) {
   .top-header {
     height: auto;
@@ -1184,7 +1213,7 @@ p {
 
   .footer-band .stay-copy p,
   .footer-band input {
-    font-size: 15px;
+    font-size: 12px;
   }
 
   .footer-band form {
