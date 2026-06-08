@@ -272,32 +272,21 @@ p {
   left: 28px;
   bottom: 28px;
   z-index: 48;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  min-height: 48px;
-  padding: 8px 16px 8px 8px;
-  color: #fff;
-  background: #1f7f54;
-  box-shadow: 0 14px 34px rgba(7, 31, 58, .18);
-  text-transform: uppercase;
-  letter-spacing: .1em;
-  font-size: 11px;
-  font-weight: 800;
-}
-
-.whatsapp-contact span {
   display: inline-grid;
   place-items: center;
-  width: 32px;
-  height: 32px;
-  border: 1px solid rgba(255, 255, 255, .55);
+  width: 56px;
+  height: 56px;
+  color: #fff;
+  background: #25d366;
   border-radius: 50%;
-  font-size: 10px;
+  box-shadow: 0 14px 34px rgba(7, 31, 58, .18);
 }
 
-.whatsapp-contact strong {
-  font-size: 11px;
+.whatsapp-contact svg {
+  width: 31px;
+  height: 31px;
+  display: block;
+  fill: currentColor;
 }
 
 .hero {
@@ -1022,7 +1011,7 @@ p {
 }
 
 .footer-brand img {
-  width: 390px;
+  width: 470px;
   max-width: 100%;
   height: auto;
   display: block;
@@ -1165,12 +1154,13 @@ p {
   .whatsapp-contact {
     left: 18px;
     bottom: 18px;
-    min-height: 42px;
-    padding-right: 12px;
+    width: 48px;
+    height: 48px;
   }
 
-  .whatsapp-contact strong {
-    display: none;
+  .whatsapp-contact svg {
+    width: 27px;
+    height: 27px;
   }
 
   .hero {
