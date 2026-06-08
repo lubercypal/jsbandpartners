@@ -92,8 +92,8 @@ p {
   justify-content: center;
   gap: 34px;
   text-transform: uppercase;
-  letter-spacing: .12em;
-  font-size: 11px;
+  letter-spacing: .1em;
+  font-size: 12px;
   font-weight: 700;
 }
 
@@ -144,7 +144,7 @@ p {
   visibility: hidden;
   transform: translateY(-10px);
   transition: opacity .32s ease, transform .32s ease, visibility .32s ease;
-  background: rgba(7, 31, 58, .4);
+  background: rgba(7, 31, 58, .58);
   border-top: 1px solid rgba(255, 255, 255, .18);
   border-bottom: 1px solid rgba(255, 255, 255, .16);
   backdrop-filter: blur(20px);
@@ -157,8 +157,10 @@ p {
   display: block;
   min-height: 132px;
   padding: 58px 30px 22px;
-  color: rgba(255, 255, 255, .9);
-  letter-spacing: .12em;
+  color: rgba(255, 255, 255, .96);
+  letter-spacing: .1em;
+  font-size: 13px;
+  font-weight: 700;
   white-space: nowrap;
   border-left: 1px solid rgba(255, 255, 255, .16);
   transition: color .24s ease, background-color .24s ease;
@@ -206,7 +208,7 @@ p {
   width: max-content;
   min-width: 186px;
   padding: 8px;
-  background: rgba(7, 31, 58, .74);
+  background: rgba(7, 31, 58, .86);
   border: 1px solid rgba(255, 255, 255, .16);
   box-shadow: 0 18px 44px rgba(7, 31, 58, .2);
 }
@@ -214,9 +216,11 @@ p {
 .submenu.level-two a {
   display: block;
   min-height: 0;
-  padding: 11px 14px;
+  padding: 12px 15px;
   border: 0;
-  color: rgba(255, 255, 255, .9);
+  color: rgba(255, 255, 255, .96);
+  font-size: 12px;
+  font-weight: 700;
   white-space: nowrap;
 }
 
@@ -939,8 +943,8 @@ p {
 
 .footer-main {
   display: grid;
-  grid-template-columns: 1.15fr .75fr 1.45fr;
-  gap: 56px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 44px;
   padding: 42px 0;
 }
 
@@ -957,8 +961,8 @@ p {
 
 .office-list {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
 }
 
 .footer-brand img {
@@ -981,11 +985,19 @@ p {
 
 .office-list strong {
   color: var(--navy);
-  font-size: 13px;
+  font-size: 15px;
+  line-height: 1.35;
 }
 
 .office-list span {
-  margin: 3px 0;
+  margin: 5px 0;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.office-list a {
+  font-size: 13px;
+  line-height: 1.55;
 }
 
 .footer-bottom {
