@@ -1269,7 +1269,7 @@ p {
   }
 
   .header-actions {
-    display: none;
+    display: none !important;
   }
 
   .whatsapp-contact {
@@ -1292,6 +1292,10 @@ p {
     border-radius: 28px;
     background: linear-gradient(90deg, #62c88c 0%, #66bbad 48%, #6fa7ce 100%);
     box-shadow: 0 22px 42px rgba(7, 31, 58, .22);
+  }
+
+  .mobile-dock .menu-toggle {
+    display: grid;
   }
 
   .mobile-dock a,
