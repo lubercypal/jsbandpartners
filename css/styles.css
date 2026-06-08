@@ -773,6 +773,14 @@ p {
   background: var(--paper);
 }
 
+.updates-grid article:nth-child(even) img {
+  order: 2;
+}
+
+.updates-grid article:nth-child(even) div {
+  order: 1;
+}
+
 .updates-grid article img {
   display: block;
   width: 100%;
@@ -785,14 +793,31 @@ p {
   padding: 22px 20px 20px;
 }
 
-.updates-grid article span {
-  display: block;
+.updates-grid .update-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
   margin-bottom: 12px;
+  line-height: 1.2;
+}
+
+.updates-grid .update-meta span,
+.updates-grid .update-meta time {
+  display: inline-block;
   color: var(--gold);
   text-transform: uppercase;
   letter-spacing: .15em;
   font-size: 9px;
   font-weight: 800;
+  white-space: nowrap;
+}
+
+.updates-grid .update-meta time {
+  color: var(--muted);
+  letter-spacing: .08em;
+  font-size: 8px;
+  text-align: right;
 }
 
 .updates-grid h3 {
@@ -811,8 +836,12 @@ p {
 }
 
 .updates-grid article a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   margin-top: 16px;
   color: var(--navy);
+  white-space: nowrap;
 }
 
 @keyframes updateRollUp {
