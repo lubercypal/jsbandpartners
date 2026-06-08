@@ -3,6 +3,7 @@ const heroControls = Array.from(document.querySelectorAll(".hero-index button"))
 const menuToggles = Array.from(document.querySelectorAll(".menu-toggle"));
 const menuClose = document.querySelector(".menu-close");
 const topNav = document.querySelector(".top-nav");
+const mobileMenuQuery = window.matchMedia("(max-width: 1100px)");
 let activeHeroControl = 0;
 let heroTimer;
 
@@ -12,6 +13,12 @@ if (menuToggles.length && topNav) {
     menuToggles.forEach((toggle) => {
       toggle.setAttribute("aria-expanded", String(isOpen));
     });
+
+    if (!isOpen) {
+      topNav.querySelectorAll(".is-open").forEach((item) => {
+        item.classList.remove("is-open");
+      });
+    }
   }
 
   menuToggles.forEach((toggle) => {
@@ -21,7 +28,14 @@ if (menuToggles.length && topNav) {
   });
 
   topNav.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
+    link.addEventListener("click", (event) => {
+      const expandable = link.parentElement?.querySelector(":scope > .submenu");
+      if (mobileMenuQuery.matches && expandable) {
+        event.preventDefault();
+        link.parentElement.classList.toggle("is-open");
+        return;
+      }
+
       setNavState(false);
     });
   });

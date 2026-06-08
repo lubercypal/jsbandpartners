@@ -106,6 +106,7 @@ p {
 
 .menu-toggle,
 .menu-close,
+.menu-panel-logo,
 .mobile-dock {
   display: none;
 }
@@ -1208,7 +1209,8 @@ p {
     min-height: 100vh;
     overflow-y: auto;
     gap: 0;
-    padding: 58px 38px 126px;
+    height: 100vh;
+    padding: 36px 38px 126px;
     background: #061b2e;
     color: #fff;
     opacity: 0;
@@ -1231,6 +1233,13 @@ p {
     font-size: 34px;
     line-height: 1;
     cursor: pointer;
+  }
+
+  .menu-panel-logo {
+    display: block;
+    width: min(300px, 70vw);
+    height: auto;
+    margin-bottom: 38px;
   }
 
   body.nav-open .top-nav {
@@ -1285,6 +1294,11 @@ p {
     background: transparent;
     border: 0;
     box-shadow: none;
+  }
+
+  .nav-item:not(.is-open) > .submenu,
+  .subitem:not(.is-open) > .submenu {
+    display: none;
   }
 
   .submenu > a,
