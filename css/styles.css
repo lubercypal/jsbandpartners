@@ -755,14 +755,14 @@ p {
 }
 
 .update-column {
-  height: 408px;
+  height: 452px;
   overflow: hidden;
   background: var(--paper);
 }
 
 .update-track {
   display: grid;
-  grid-template-rows: repeat(2, 408px);
+  grid-template-rows: repeat(2, 452px);
   animation: updateRollUp 12s ease-in-out infinite;
 }
 
@@ -777,13 +777,13 @@ p {
 
 .updates-grid article {
   display: grid;
-  grid-template-rows: 154px 1fr;
+  grid-template-rows: 188px 1fr;
   min-height: 0;
   background: var(--paper);
 }
 
 .updates-grid article:nth-child(even) {
-  grid-template-rows: 1fr 154px;
+  grid-template-rows: 1fr 188px;
 }
 
 .updates-grid article:nth-child(even) img {
@@ -797,7 +797,7 @@ p {
 .updates-grid article img {
   display: block;
   width: 100%;
-  height: 154px;
+  height: 188px;
   object-fit: cover;
   filter: saturate(.82) contrast(.94);
 }
