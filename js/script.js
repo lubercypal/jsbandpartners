@@ -31,8 +31,31 @@ if (menuToggles.length && topNav) {
     link.addEventListener("click", (event) => {
       const expandable = link.parentElement?.querySelector(":scope > .submenu");
       if (mobileMenuQuery.matches && expandable) {
+        const menuItem = link.parentElement;
+        const willOpen = !menuItem.classList.contains("is-open");
+
         event.preventDefault();
-        link.parentElement.classList.toggle("is-open");
+
+        if (menuItem.classList.contains("nav-item")) {
+          topNav.querySelectorAll(":scope > .nav-item.is-open").forEach((item) => {
+            if (item !== menuItem) {
+              item.classList.remove("is-open");
+              item.querySelectorAll(".is-open").forEach((nestedItem) => {
+                nestedItem.classList.remove("is-open");
+              });
+            }
+          });
+        }
+
+        if (menuItem.classList.contains("subitem")) {
+          menuItem.parentElement?.querySelectorAll(":scope > .subitem.is-open").forEach((item) => {
+            if (item !== menuItem) {
+              item.classList.remove("is-open");
+            }
+          });
+        }
+
+        menuItem.classList.toggle("is-open", willOpen);
         return;
       }
 
