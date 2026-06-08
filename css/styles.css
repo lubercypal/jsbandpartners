@@ -739,44 +739,112 @@ p {
 .updates-grid {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
-  border-top: 1px solid var(--line);
-  border-left: 1px solid var(--line);
+  gap: 1px;
+  overflow: hidden;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+
+.update-column {
+  height: 362px;
+  overflow: hidden;
+  background: var(--paper);
+}
+
+.update-track {
+  display: grid;
+  grid-template-rows: repeat(2, 362px);
+  animation: updateRollUp 12s ease-in-out infinite;
+}
+
+.update-column.is-reverse .update-track {
+  animation-name: updateRollDown;
+  transform: translateY(-50%);
+}
+
+.updates-grid:hover .update-track {
+  animation-play-state: paused;
 }
 
 .updates-grid article {
-  min-height: 246px;
-  padding: 28px 24px 24px;
-  border-right: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
+  display: grid;
+  grid-template-rows: 138px 1fr;
+  min-height: 0;
+  background: var(--paper);
+}
+
+.updates-grid article img {
+  display: block;
+  width: 100%;
+  height: 138px;
+  object-fit: cover;
+  filter: saturate(.82) contrast(.94);
+}
+
+.updates-grid article div {
+  padding: 22px 20px 20px;
 }
 
 .updates-grid article span {
   display: block;
-  margin-bottom: 18px;
+  margin-bottom: 12px;
   color: var(--gold);
   text-transform: uppercase;
   letter-spacing: .15em;
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 800;
 }
 
 .updates-grid h3 {
-  margin-bottom: 14px;
+  margin-bottom: 12px;
   color: var(--navy);
   font-family: var(--serif);
-  font-size: 23px;
-  line-height: 1.15;
+  font-size: 20px;
+  line-height: 1.12;
   font-weight: 600;
 }
 
 .updates-grid p {
   color: var(--muted);
-  font-size: 12px;
+  font-size: 11px;
+  line-height: 1.65;
 }
 
 .updates-grid article a {
-  margin-top: 18px;
+  margin-top: 16px;
   color: var(--navy);
+}
+
+@keyframes updateRollUp {
+  0%, 38% {
+    transform: translateY(0);
+  }
+  50%, 88% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes updateRollDown {
+  0%, 38% {
+    transform: translateY(-50%);
+  }
+  50%, 88% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .update-track,
+  .update-column.is-reverse .update-track {
+    animation: none;
+    transform: none;
+  }
 }
 
 .attorney-band {
@@ -1455,10 +1523,6 @@ p {
 @media (min-width: 1101px) and (max-width: 1280px) {
   .practice-menu {
     grid-template-columns: repeat(4, minmax(160px, 1fr));
-  }
-
-  .updates-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
