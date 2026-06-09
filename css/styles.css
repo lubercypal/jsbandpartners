@@ -7,7 +7,8 @@
   --ink: #101820;
   --muted: #5f676b;
   --line: #d9d2c8;
-  --gold: #b18448;
+  --gold: #a87536;
+  --accent-readable: #7b531f;
   --serif: Georgia, "Times New Roman", serif;
   --sans: Arial, Helvetica, sans-serif;
 }
@@ -392,9 +393,13 @@ p {
   white-space: nowrap;
 }
 
-.hero h1 em,
-.firm-copy em {
+.hero h1 em {
   color: var(--gold);
+  font-style: italic;
+}
+
+.firm-copy em {
+  color: var(--navy);
   font-style: italic;
 }
 
@@ -823,7 +828,7 @@ p {
 .updates-grid .update-meta span,
 .updates-grid .update-meta time {
   display: inline-block;
-  color: var(--gold);
+  color: var(--accent-readable);
   text-transform: uppercase;
   letter-spacing: .15em;
   font-size: 9px;
@@ -936,7 +941,7 @@ p {
 }
 
 .attorney-card div > span {
-  color: var(--gold);
+  color: var(--accent-readable);
   text-transform: uppercase;
   letter-spacing: .16em;
   font-size: 9px;
