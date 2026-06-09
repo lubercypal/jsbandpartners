@@ -8,8 +8,8 @@
   --muted: #5f676b;
   --line: #d9d2c8;
   --gold: #b18448;
-  --serif: "Cormorant Garamond", Georgia, serif;
-  --sans: "Inter", Arial, sans-serif;
+  --serif: Georgia, "Times New Roman", serif;
+  --sans: Arial, Helvetica, sans-serif;
 }
 
 * {
