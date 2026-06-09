@@ -9,7 +9,7 @@
   --line: #d9d2c8;
   --gold: #a87536;
   --accent-readable: #7b531f;
-  --serif: Georgia, "Times New Roman", serif;
+  --serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
   --sans: Arial, Helvetica, sans-serif;
 }
 
@@ -28,6 +28,8 @@ body {
   font-family: var(--sans);
   font-size: 14px;
   line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 a {
@@ -383,8 +385,9 @@ p {
   color: var(--navy);
   font-family: var(--serif);
   font-size: 78px;
-  font-weight: 600;
-  line-height: .9;
+  font-weight: 500;
+  line-height: .92;
+  letter-spacing: .005em;
 }
 
 .hero h1 span,
@@ -529,8 +532,8 @@ p {
   margin-bottom: 22px;
   font-family: var(--serif);
   font-size: 24px;
-  font-weight: 600;
-  line-height: 1.05;
+  font-weight: 500;
+  line-height: 1.08;
 }
 
 .practice-item p {
@@ -615,8 +618,9 @@ p {
   margin: 42px 0 30px;
   font-family: var(--serif);
   font-size: 39px;
-  font-weight: 600;
-  line-height: 1;
+  font-weight: 500;
+  line-height: 1.04;
+  letter-spacing: .005em;
 }
 
 .firm-copy p {
@@ -716,7 +720,7 @@ p {
   margin-bottom: 24px;
   font-family: var(--serif);
   font-size: 25px;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .matters-band p {
@@ -849,7 +853,7 @@ p {
   font-family: var(--serif);
   font-size: 20px;
   line-height: 1.12;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .updates-grid p {
@@ -952,7 +956,7 @@ p {
   margin: 8px 0 12px;
   font-family: var(--serif);
   font-size: 25px;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .attorney-card p {
@@ -1026,6 +1030,7 @@ p {
   font-family: var(--serif);
   font-size: 34px;
   line-height: 1.18;
+  font-weight: 500;
 }
 
 .testimonial-slide p {
@@ -1080,7 +1085,7 @@ p {
   font-family: var(--serif);
   font-size: 48px;
   line-height: 1.15;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .stay-copy p {
@@ -1113,7 +1118,7 @@ p {
   letter-spacing: 0;
   font-family: var(--serif);
   font-size: 48px;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .footer-band .stay-copy p {
@@ -1393,7 +1398,7 @@ p {
     font-size: clamp(28px, 6.8vw, 42px);
     line-height: 1.08;
     letter-spacing: .02em;
-    font-weight: 700;
+    font-weight: 600;
   }
 
   .top-nav > a::after,
