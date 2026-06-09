@@ -342,13 +342,15 @@ p {
     url("../assets/images/banner/hero-stairs-carousel.webp") center right / cover no-repeat;
 }
 
-.hero-slide.slide-boardroom {
+.hero-slide.slide-boardroom.is-loaded,
+.hero-slide.slide-boardroom.is-active {
   background:
     linear-gradient(90deg, rgba(247,244,239,1) 0%, rgba(247,244,239,.94) 38%, rgba(247,244,239,.22) 61%, rgba(247,244,239,0) 100%),
     url("../assets/images/banner/hero-boardroom-carousel.webp") center right / cover no-repeat;
 }
 
-.hero-slide.slide-court {
+.hero-slide.slide-court.is-loaded,
+.hero-slide.slide-court.is-active {
   background:
     linear-gradient(90deg, rgba(247,244,239,1) 0%, rgba(247,244,239,.94) 38%, rgba(247,244,239,.22) 61%, rgba(247,244,239,0) 100%),
     url("../assets/images/banner/hero-court-warm.webp") center right / cover no-repeat;
@@ -1719,13 +1721,15 @@ p {
       url("../assets/images/banner/hero-stairs-carousel.webp") center bottom / cover no-repeat;
   }
 
-  .hero-slide.slide-boardroom {
+  .hero-slide.slide-boardroom.is-loaded,
+  .hero-slide.slide-boardroom.is-active {
     background:
       linear-gradient(180deg, rgba(247,244,239,.96) 0%, rgba(247,244,239,.84) 44%, rgba(247,244,239,.3) 100%),
       url("../assets/images/banner/hero-boardroom-carousel.webp") center bottom / cover no-repeat;
   }
 
-  .hero-slide.slide-court {
+  .hero-slide.slide-court.is-loaded,
+  .hero-slide.slide-court.is-active {
     background:
       linear-gradient(180deg, rgba(247,244,239,.96) 0%, rgba(247,244,239,.84) 44%, rgba(247,244,239,.3) 100%),
       url("../assets/images/banner/hero-court-warm.webp") center bottom / cover no-repeat;

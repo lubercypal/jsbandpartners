@@ -7,6 +7,12 @@ const mobileMenuQuery = window.matchMedia("(max-width: 1100px)");
 let activeHeroControl = 0;
 let heroTimer;
 
+function loadHeroSlide(slide) {
+  if (slide) {
+    slide.classList.add("is-loaded");
+  }
+}
+
 if (menuToggles.length && topNav) {
   function setNavState(isOpen) {
     document.body.classList.toggle("nav-open", isOpen);
@@ -74,6 +80,7 @@ function showHero(controlIndex) {
   const normalizedControl = controlIndex % heroControls.length;
   const slideIndex = normalizedControl % heroSlides.length;
   activeHeroControl = normalizedControl;
+  loadHeroSlide(heroSlides[slideIndex]);
 
   heroSlides.forEach((slide, index) => {
     slide.classList.toggle("is-active", index === slideIndex);
@@ -98,7 +105,14 @@ heroControls.forEach((button, index) => {
   });
 });
 
+loadHeroSlide(heroSlides[0]);
 startHeroCarousel();
+
+window.addEventListener("load", () => {
+  window.setTimeout(() => {
+    heroSlides.forEach(loadHeroSlide);
+  }, 1200);
+}, { once: true });
 
 const counters = Array.from(document.querySelectorAll("[data-count]"));
 
